@@ -23,9 +23,13 @@ class ViewController: UIViewController {
         LOG_METHOD()
         // LOG(msg: "mainView: \(mainView.frame)")
         // self.mainView.removeFromSuperview()
-        vc1.frame.size.width = self.view.bounds.width
-        mainView.addSubview(vc1)
+        // vc1.frame.size.width = self.view.bounds.width
+        // mainView.addSubview(vc1)
     
+        vc1.isHidden = false
+        vc2.isHidden = true
+        vc3.isHidden = true
+        
     }
 
     @IBAction func v2Tapped(sender:UIButton) {
@@ -34,6 +38,10 @@ class ViewController: UIViewController {
         // self.mainView.removeFromSuperview()
         vc2.frame.size.width = self.view.bounds.width
         mainView.addSubview(vc2)
+
+        vc1.isHidden = true
+        vc2.isHidden = false
+        vc3.isHidden = true
         
     }
 
@@ -44,6 +52,9 @@ class ViewController: UIViewController {
         vc3.frame.size.width = self.view.bounds.width
         mainView.addSubview(vc3)
         
+        vc1.isHidden = true
+        vc2.isHidden = true
+        vc3.isHidden = false
     }
 
     
@@ -53,22 +64,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         LOG_METHOD()
+
+        vc1.isHidden = false
+        vc2.isHidden = true
+        vc3.isHidden = true
+
         
-        let x = self.mainView.frame.origin.x
-        let y = self.mainView.frame.origin.y
-        let width = self.mainView.frame.size.width
-        let height = self.mainView.frame.size.height
-        
-        LOG(msg: "mainView: \(mainView.frame)")
+        vc3.frame.size.width = self.view.bounds.width
+        mainView.addSubview(vc3)
+
+        vc2.frame.size.width = self.view.bounds.width
+        mainView.addSubview(vc2)
+
         vc1.frame.size.width = self.view.bounds.width
         mainView.addSubview(vc1)
-        LOG(msg: "vc1     : \(vc1.frame)")
-        LOG(msg: "mainView: \(mainView.frame)")
-        self.mainView.frame.origin.x = x
-        self.mainView.frame.origin.y = y
-        self.mainView.frame.size.width = width
-        self.mainView.frame.size.height = height
         
+
+
         
     }
 
